@@ -29,3 +29,12 @@ func (englishBot) getGreeting() string {
 func (spanishBot) getGreeting() string {
 	return "Hiola"
 }
+
+type user struct {
+	name string
+}
+type Bot interface {
+	getGreeting(string, int) (string, error)
+	getBotVersion() float32
+	respondToUser(user) string
+}
